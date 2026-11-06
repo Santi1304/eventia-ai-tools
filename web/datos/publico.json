@@ -1,0 +1,36 @@
+{
+  "generado": "2026-11-05T00:04:51.597Z",
+  "empresa": "Eventia Renta de Mobiliario (ficticia)",
+  "modo": "SIMULADO",
+  "datos_ficticios": true,
+  "fuente": "Registro privado de casos en n8n, exportación sanitizada",
+  "periodo": {
+    "desde": null,
+    "hasta": "2026-11-05T00:04:51.599Z"
+  },
+  "kpi": {
+    "tiempo_mediano_cotizacion_s": {
+      "valor": null,
+      "n": 0,
+      "formula": "mediana(fecha_hora solicita_aprobacion_humana − creado) en casos liberados por el Agente 4",
+      "unidad": "s"
+    },
+    "tasa_apartado_simulado": {
+      "valor": null,
+      "numerador": 0,
+      "denominador": 0,
+      "formula": "aprobados_simulados / (aprobados + rechazados + vencidos) × 100",
+      "unidad": "%"
+    },
+    "costo_promedio_caso_completado_usd": {
+      "valor": null,
+      "n": 0,
+      "costo_casos_no_completados_usd": 0,
+      "formula": "Σ costo LLM medido de casos liberados / nº de casos liberados",
+      "unidad": "USD/caso"
+    }
+  },
+  "por_estado": {},
+  "costo_por_agente_usd": {},
+  "casos": []
+}

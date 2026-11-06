@@ -1,0 +1,40 @@
+{
+  "_aviso": "DATOS FICTICIOS. Catálogo de prueba de Eventia Renta de Mobiliario (empresa ficticia). Precios en MXN por día de renta, sin IVA.",
+  "version": "2026-11-04",
+  "moneda": "MXN",
+  "articulos": [
+    { "sku": "SIL-PLE", "nombre": "Silla plegable blanca", "categoria": "sillas", "precio_dia": 12, "stock": 600, "capacidad_personas": 1 },
+    { "sku": "SIL-TIF", "nombre": "Silla tiffany", "categoria": "sillas", "precio_dia": 35, "stock": 300, "capacidad_personas": 1 },
+    { "sku": "MES-RED", "nombre": "Mesa redonda para 10 personas", "categoria": "mesas", "precio_dia": 90, "stock": 60, "capacidad_personas": 10 },
+    { "sku": "MES-TAB", "nombre": "Mesa tablón 2.4 m (8 a 10 personas)", "categoria": "mesas", "precio_dia": 70, "stock": 50, "capacidad_personas": 10 },
+    { "sku": "MAN-RED", "nombre": "Mantel redondo", "categoria": "manteleria", "precio_dia": 45, "stock": 80, "capacidad_personas": 0 },
+    { "sku": "MAN-TAB", "nombre": "Mantel para tablón", "categoria": "manteleria", "precio_dia": 40, "stock": 60, "capacidad_personas": 0 },
+    { "sku": "CAR-612", "nombre": "Carpa 6 x 12 m (hasta 60 personas)", "categoria": "carpas", "precio_dia": 1800, "stock": 6, "capacidad_personas": 60 },
+    { "sku": "PIS-44", "nombre": "Pista de baile 4 x 4 m", "categoria": "pistas", "precio_dia": 2500, "stock": 3, "capacidad_personas": 0 },
+    { "sku": "CAL-EXT", "nombre": "Calentador de exterior", "categoria": "climatizacion", "precio_dia": 450, "stock": 10, "capacidad_personas": 0 },
+    { "sku": "ILU-SER", "nombre": "Serie de luces 10 m", "categoria": "iluminacion", "precio_dia": 120, "stock": 40, "capacidad_personas": 0 }
+  ],
+  "zonas": [
+    { "id": "centro", "nombre": "Zona Centro", "flete": 600 },
+    { "id": "norte", "nombre": "Zona Norte", "flete": 800 },
+    { "id": "sur", "nombre": "Zona Sur", "flete": 900 },
+    { "id": "oriente", "nombre": "Zona Oriente", "flete": 950 }
+  ],
+  "politicas": {
+    "iva": 0.16,
+    "descuentos": [
+      { "desde_subtotal": 25000, "porcentaje": 0.08 },
+      { "desde_subtotal": 10000, "porcentaje": 0.05 }
+    ],
+    "deposito_garantia_pct": 0.20,
+    "anticipo_para_apartar_pct": 0.50,
+    "pedido_minimo": 1500,
+    "anticipacion_min_dias": 3,
+    "anticipacion_max_dias": 180,
+    "invitados_min": 10,
+    "invitados_max": 500,
+    "dias_renta_min": 1,
+    "dias_renta_max": 3,
+    "vigencia_aprobacion_min": 30
+  }
+}

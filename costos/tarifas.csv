@@ -1,0 +1,16 @@
+componente,proveedor,concepto,unidad,tarifa,moneda,incluido_en_plan,fuente,tipo_fuente,fecha_consulta,nota
+llm,Anthropic,claude-haiku-5-5 entrada (prompt <=100K),USD por millón de tokens,0.10,USD,no,https://platform.claude.com/docs/en/about-claude/pricing,oficial,2026-11-04,Arriba de 100K tokens de prompt la tarifa sube a 0.50
+llm,Anthropic,claude-haiku-5-5 salida (prompt <=100K),USD por millón de tokens,0.50,USD,no,https://platform.claude.com/docs/en/about-claude/pricing,oficial,2026-11-04,Arriba de 100K tokens de prompt la tarifa sube a 2.50
+llm,Anthropic,claude-haiku-5-5 lectura de caché,USD por millón de tokens,0.01,USD,no,https://platform.claude.com/docs/en/about-claude/pricing,oficial,2026-11-04,No se usa caché en la versión actual
+llm,Anthropic,claude-haiku-5-5 escritura de caché 5 min,USD por millón de tokens,0.125,USD,no,https://platform.claude.com/docs/en/about-claude/pricing,oficial,2026-11-04,No se usa caché en la versión actual
+voz,ElevenLabs,ElevenAgents plan Free,minutos incluidos por mes,15,min,sí,https://elevenlabs.io/pricing/agents (vía getmacha.com),secundaria,2026-11-04,VERIFICAR en la página oficial al implementar
+voz,ElevenLabs,ElevenAgents minuto adicional,USD por minuto,0.08,USD,no,https://elevenlabs.io/pricing/agents (vía getmacha.com),secundaria,2026-11-04,Ráfaga sobre concurrencia: 0.16 USD/min
+voz,ElevenLabs,ElevenAgents plan Starter,USD por mes,6,USD,75 min,https://elevenlabs.io/pricing/agents (vía getmacha.com),secundaria,2026-11-04,VERIFICAR
+voz,ElevenLabs,ElevenAgents plan Creator,USD por mes,22,USD,275 min,https://elevenlabs.io/pricing/agents (vía getmacha.com),secundaria,2026-11-04,VERIFICAR
+voz,ElevenLabs,ElevenAgents plan Pro,USD por mes,99,USD,1238 min,https://elevenlabs.io/pricing/agents (vía getmacha.com),secundaria,2026-11-04,VERIFICAR
+voz_llm,ElevenLabs,LLM del agente de voz,USD por minuto,0.0005-0.0446,USD,no,https://elevenlabs.io/pricing/agents (vía getmacha.com),secundaria,2026-11-04,Depende del modelo elegido en el agente; se factura aparte del minuto
+orquestacion,n8n,Cloud Starter (facturación anual),EUR por mes,20,EUR,2500 ejecuciones,https://n8n.io/pricing/ (vía jetadmin.io),secundaria,2026-11-04,VERIFICAR precio mensual y condiciones de prueba
+orquestacion,n8n,Cloud Pro (facturación anual),EUR por mes,50,EUR,10000 ejecuciones,https://n8n.io/pricing/ (vía jetadmin.io),secundaria,2026-11-04,VERIFICAR
+canal,Telegram,Bot API,por mensaje,0,USD,sí,https://core.telegram.org/bots/api,oficial,2026-11-04,Sin costo por mensaje; no consume tokens
+publicacion,GitHub,Pages + Actions (repositorio público),por mes,0,USD,sí,https://docs.github.com/en/pages,oficial,2026-11-04,Sin costo en repositorio público dentro de los límites de uso
+tipo_cambio,Banxico,FIX MXN por USD,MXN por USD,PENDIENTE,MXN,n/a,https://www.banxico.org.mx/tipcamb/main.do?page=tip&idioma=sp,oficial,PENDIENTE,Capturar el FIX del día de la entrega antes de convertir

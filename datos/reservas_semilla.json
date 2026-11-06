@@ -1,0 +1,9 @@
+{
+  "_aviso": "DATOS FICTICIOS. Unidades ya comprometidas por fecha antes de iniciar las pruebas. Sirven para que la disponibilidad no sea siempre el stock completo.",
+  "reservas": {
+    "2026-11-21": { "SIL-TIF": 260, "MES-RED": 20, "CAR-612": 5, "PIS-44": 2 },
+    "2026-11-28": { "SIL-PLE": 300, "MES-TAB": 30 },
+    "2026-12-12": { "SIL-TIF": 150, "CAR-612": 3, "CAL-EXT": 8 },
+    "2026-12-19": { "SIL-PLE": 500, "MES-RED": 50, "PIS-44": 3 }
+  }
+}

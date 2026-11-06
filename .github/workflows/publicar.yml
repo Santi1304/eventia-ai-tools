@@ -1,0 +1,69 @@
+name: Validar y publicar panel
+
+# Se activa con cambios en la rama de entrega y también se puede ejecutar a mano.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  validar:
+    name: Controles previos (deben pasar para publicar)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Pruebas del flujo (orquestador, agentes, guardrails, loops)
+        run: node --test tests/*.test.js
+      - name: Validación de datos, cálculos, skills, workflow y secretos
+        run: node scripts/validar.js
+      - name: Armar sitio estático
+        run: |
+          mkdir -p _site
+          cp -r web/. _site/
+          mkdir -p _site/datos
+          cp datos/catalogo.json _site/datos/catalogo.json
+          echo "Publicando: $(git rev-parse --short HEAD)" > _site/version.txt
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  desplegar:
+    name: Desplegar en GitHub Pages
+    needs: validar
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    outputs:
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - id: despliegue
+        uses: actions/deploy-pages@v4
+
+  verificar:
+    name: Verificar sitio publicado
+    needs: desplegar
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comprobar página, datos y skills publicados
+        env:
+          URL: ${{ needs.desplegar.outputs.url }}
+        run: |
+          sleep 20
+          curl -fsS "$URL" | grep -q "Datos ficticios"
+          curl -fsS "${URL}datos/publico.json" | grep -q '"datos_ficticios": true'
+          curl -fsS "${URL}skills/bundle.json" | grep -q 'cotizacion-mobiliario-eventos'
+          echo "Sitio verificado en $URL"

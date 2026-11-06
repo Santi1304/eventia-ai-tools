@@ -1,0 +1,9 @@
+{
+  "_instrucciones": "Copia este archivo como n8n/config.local.json (está en .gitignore), llena tus valores y ejecuta: node scripts/build_n8n.js --local. Importa n8n/eventia_workflow.local.json en n8n. No contiene secretos: el token del bot, la API key y las claves de los webhooks van en Credentials de n8n.",
+  "skills_url": "https://REEMPLAZAR_USUARIO.github.io/eventia-ai-tools/skills/bundle.json",
+  "usuarios_autorizados": [],
+  "aprobadores": [],
+  "chat_aprobador": null,
+  "limite_costo_usd": 0.02,
+  "skill_cotizacion_version": "1.1"
+}
