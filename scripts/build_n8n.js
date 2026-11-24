@@ -65,15 +65,15 @@ code('Cerrar caso', 'cerrar_caso.js', [1340, 540]);
 sw('Tipo de mensaje', 2, [1580, 640]);
 nodos[nodos.length - 1].parameters.output = '={{ $json.tipo }}';
 nodo('Enviar Telegram', 'n8n-nodes-base.telegram', 1.2, [1800, 580],
-  { chatId: '={{ $json.chat_id }}', text: '={{ $json.texto }}', additionalFields: { appendAttribution: false } },
+  { chatId: '={{ $json.chat_id }}', text: "={{ String($json.texto).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') }}", additionalFields: { appendAttribution: false, parse_mode: 'HTML' } },
   { credentials: cred('telegramApi', 'Eventia Bot (Telegram)') });
 nodo('Enviar aprobación', 'n8n-nodes-base.telegram', 1.2, [1800, 740], {
-  chatId: '={{ $json.chat_id }}', text: '={{ $json.texto }}', replyMarkup: 'inlineKeyboard',
+  chatId: '={{ $json.chat_id }}', text: "={{ String($json.texto).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') }}", replyMarkup: 'inlineKeyboard',
   inlineKeyboard: { rows: [{ row: { buttons: [
     { text: '✅ Aprobar', additionalFields: { callback_data: '={{ $json.botones.aprobar }}' } },
     { text: '❌ Rechazar', additionalFields: { callback_data: '={{ $json.botones.rechazar }}' } }
   ] } }] },
-  additionalFields: { appendAttribution: false }
+  additionalFields: { appendAttribution: false, parse_mode: 'HTML' }
 }, { credentials: cred('telegramApi', 'Eventia Bot (Telegram)') });
 
 // ── Canal de voz (herramienta de servidor de ElevenLabs) ──

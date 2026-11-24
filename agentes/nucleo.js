@@ -481,7 +481,11 @@ const NUCLEO = (function () {
     const status = http.statusCode;
     let body = http.body;
     if (typeof body === 'string') { try { body = JSON.parse(body); } catch (e) { /* queda texto */ } }
-    if (status !== 200) return { ok: false, tipo: status === 429 || status === 529 ? 'cuota' : 'http_' + status, detalle: String((body && body.error && body.error.type) || status), usage: null };
+    if (status !== 200) {
+      const msg = String((body && body.error && body.error.message) || '');
+      const tipo = /credit balance/i.test(msg) ? 'saldo_insuficiente' : (status === 429 || status === 529 ? 'cuota' : 'http_' + status);
+      return { ok: false, tipo, detalle: (String((body && body.error && body.error.type) || status) + (msg ? ' · ' + msg.slice(0, 90) : '')), usage: null };
+    }
     const usage = body.usage || {};
     if (body.stop_reason === 'refusal') return { ok: false, tipo: 'rechazo_modelo', usage };
     const texto = (body.content || []).filter((b) => b.type === 'text').map((b) => b.text).join('').trim();
@@ -516,7 +520,7 @@ const NUCLEO = (function () {
 
     if (!r.ok) {
       if (r.tipo === 'rechazo_modelo') return cerrar(caso, 'revision_humana', 'el modelo declinó la solicitud (refusal)', t);
-      if (caso.reintentos[agente] < CONFIG.max_reintentos_api && r.tipo !== 'http_400' && r.tipo !== 'http_401') {
+      if (caso.reintentos[agente] < CONFIG.max_reintentos_api && !['http_400', 'http_401', 'saldo_insuficiente'].includes(r.tipo)) {
         caso.reintentos[agente] += 1;
         trazar(caso, 'orquestador', 'reintento', { agente, motivo: r.tipo }, t);
         return caso;                                   // el orquestador vuelve a pedir el mismo paso
