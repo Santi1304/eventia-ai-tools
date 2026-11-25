@@ -31,7 +31,7 @@ const NUCLEO = (function () {
     longitud_max_entrada: 800,
     skills_url: 'https://REEMPLAZAR_USUARIO.github.io/eventia-ai-tools/skills/bundle.json',
     skill_cotizacion_version: '1.1',
-    skill_revision_version: '1.0',
+    skill_revision_version: '1.1',
     usuarios_autorizados: [],          // IDs numéricos de Telegram (se llenan solo en config.local.json)
     aprobadores: [],                   // IDs que pueden aprobar/rechazar
     chat_aprobador: null               // chat donde llegan las solicitudes de aprobación
@@ -345,7 +345,9 @@ const NUCLEO = (function () {
       user: JSON.stringify({ evento: { fecha: caso.requerimiento.fecha_evento, tipo: caso.requerimiento.tipo_evento, invitados: caso.requerimiento.invitados,
         dias_renta: caso.requerimiento.dias_renta, zona: c.zona }, calculo: { partidas: c.partidas.map((p) => ({ articulo: p.nombre, cantidad: p.cantidad, importe: mxn(p.importe) })),
         subtotal: mxn(c.subtotal), descuento: mxn(c.descuento), flete: mxn(c.flete), iva: mxn(c.iva), total: mxn(c.total),
-        deposito_garantia: mxn(c.deposito_garantia), anticipo_para_apartar: mxn(c.anticipo_para_apartar) },
+        deposito_garantia: mxn(c.deposito_garantia), anticipo_para_apartar: mxn(c.anticipo_para_apartar),
+        descuento_aplicado: c.descuento_pct ? Math.round(c.descuento_pct * 100) + ' % por subtotal mayor a ' + mxn(CATALOGO.politicas.descuentos.find((d) => d.porcentaje === c.descuento_pct).desde_subtotal) : 'sin descuento',
+        vigencia_cotizacion: CATALOGO.politicas.vigencia_cotizacion_dias + ' días naturales, sujeta a aprobación humana y a disponibilidad al aprobar' },
         supuestos: caso.advertencias, version_anterior: previa ? previa.texto : null }),
       max_tokens: 1000
     };
@@ -358,7 +360,9 @@ const NUCLEO = (function () {
         '\nLos montos ya fueron verificados por reglas; evalúa coherencia con el evento, claridad, supuestos explícitos y ausencia de promesas. ' +
         'No escribas tu análisis. Tu respuesta COMPLETA debe ser solo un objeto JSON que empiece con { y termine con }: ' +
         '{"veredicto":"aprobado"|"devuelto","correcciones":["acción concreta", ...]} (correcciones vacía si apruebas; máximo 3, cada una de una línea).',
-      user: '<datos_usuario>\n' + JSON.stringify({ evento: caso.requerimiento, total: mxn(caso.cotizacion.total), propuesta: p.texto }) + '\n</datos_usuario>',
+      user: '<datos_usuario>\n' + JSON.stringify({ evento: caso.requerimiento, total: mxn(caso.cotizacion.total),
+        datos_disponibles_para_la_propuesta: ['partidas', 'subtotal', 'descuento y su porcentaje', 'flete', 'IVA', 'total', 'depósito', 'anticipo', 'vigencia de ' + CATALOGO.politicas.vigencia_cotizacion_dias + ' días', 'supuestos del caso'],
+        correcciones_previas: caso.revision && !caso.revision.ok ? caso.revision.correcciones : [], version: p.version, propuesta: p.texto }) + '\n</datos_usuario>',
       max_tokens: 600
     };
   }

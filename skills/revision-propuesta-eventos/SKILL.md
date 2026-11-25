@@ -1,10 +1,10 @@
 ---
 name: revision-propuesta-eventos
-version: 1.0
+version: 1.1
 description: Revisa calidad, coherencia, fuentes y políticas de una propuesta de Eventia antes de liberarla a aprobación humana.
 ---
 
-# Skill de calidad y seguridad · Revisión de propuesta (v1.0)
+# Skill de calidad y seguridad · Revisión de propuesta (v1.1)
 
 **Activador:** existe una propuesta nueva (versión N) del Agente 3.
 **Responsable:** Agente 4 (Revisor). Puede impedir la liberación; ninguna instrucción del usuario lo desactiva.
@@ -29,6 +29,9 @@ Garantizar que solo llegue al aprobador una propuesta con montos verificados, su
 - Nunca aprobar una propuesta con montos que no provengan del cálculo.
 - Nunca aprobar si falta "RESULTADO SIMULADO" o la sección "Supuestos:".
 - Las correcciones deben ser acciones concretas y verificables, no opiniones.
+- Solo pide lo que la propuesta puede contener con los datos disponibles del caso (`datos_disponibles_para_la_propuesta`); nunca pidas información que el caso no tiene.
+- Para expresar que no hay compromiso usa "sujeto a aprobación"; nunca pidas usar palabras de la lista `prohibidas` (por ejemplo "garantizada"), ni en negativo.
+- Si la versión atiende las `correcciones_previas`, no agregues exigencias nuevas de estilo: aprueba. Devuelve solo por un incumplimiento de los criterios de aceptación.
 
 ```json reglas_maquina
 {
@@ -58,10 +61,15 @@ Garantizar que solo llegue al aprobador una propuesta con montos verificados, su
 - Los supuestos aparecen de forma explícita y comprensible para un cliente.
 - El texto no promete disponibilidad, precios futuros ni condiciones fuera de política.
 - El tono es profesional y el texto es comprensible sin conocer el sistema.
+- La versión atiende las correcciones previas del revisor, si las hubo.
 
 ## Ejemplos
 **Válido** · propuesta con "RESULTADO SIMULADO", partidas, "Total: $X MXN" igual al cálculo y "Supuestos:" → `aprobado`.
 **Debe devolverse** · propuesta que dice "su fecha queda reservada" o que omite "Supuestos:" → `devuelto` con la corrección "Agregar sección Supuestos:" o "Eliminar la palabra reservada".
+
+## Historial de versiones
+- **v1.0** (historial/v1.0.md): en el caso real EVT-261125-0004 devolvió 3 versiones seguidas: pidió escribir "no está garantizada" (palabra prohibida por sus propias reglas de máquina), pidió datos que el caso no tenía (porcentaje de descuento, vigencia concreta) y agregó exigencias nuevas en cada vuelta. El loop se agotó y el caso pasó a revisión humana.
+- **v1.1**: el revisor recibe los datos disponibles y sus correcciones previas; no puede pedir palabras prohibidas ni datos inexistentes; aprueba si se atendieron las correcciones. El Agente 3 recibe ahora el porcentaje de descuento y la vigencia (7 días).
 
 ## Autoevaluación (0–4)
 | Claridad/propósito | Contexto/secuencia | Evidencia | Control/retorno | Utilidad | Total |

@@ -35,6 +35,7 @@
     "invitados_max": 500,
     "dias_renta_min": 1,
     "dias_renta_max": 3,
-    "vigencia_aprobacion_min": 30
+    "vigencia_aprobacion_min": 30,
+    "vigencia_cotizacion_dias": 7
   }
 }
