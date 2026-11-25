@@ -297,7 +297,8 @@ const NUCLEO = (function () {
     const max = m.max_caracteres || 1400;
     if (t.length > max) fallas.push('Excede ' + max + ' caracteres (' + t.length + ').');
     const validos = new Set([calc.subtotal, calc.descuento, calc.flete, calc.base_gravable, calc.iva, calc.total, calc.deposito_garantia, calc.anticipo_para_apartar]
-      .concat(calc.partidas.map((p) => p.importe)).concat(calc.partidas.map((p) => p.precio_dia)).map(r2));
+      .concat(calc.partidas.map((p) => p.importe)).concat(calc.partidas.map((p) => p.precio_dia))
+      .concat(CATALOGO.politicas.descuentos.map((d) => d.desde_subtotal)).concat([CATALOGO.politicas.pedido_minimo]).map(r2));   // umbrales de política citados como contexto
     const ajenos = numerosEnTexto(t).filter((n) => !validos.has(r2(n)));
     if (ajenos.length) fallas.push('Montos que no provienen del cálculo: ' + ajenos.slice(0, 4).map((n) => '$' + n).join(', ') + '.');
     if (m.exige_total !== false && !numerosEnTexto(t).some((n) => r2(n) === r2(calc.total))) fallas.push('No muestra el total calculado ' + mxn(calc.total) + '.');

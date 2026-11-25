@@ -168,3 +168,13 @@ test('P14 · exportación sanitizada coincide con casos y llamadas, sin datos pr
   const sumaCasos = exp.publico.casos.reduce((a, c) => a + c.costo_usd, 0);
   assert.ok(Math.abs(suma - sumaCasos) < 1e-9, 'costos no concilian');
 });
+
+test('Revisión determinista acepta umbrales de política citados (caso real EVT-261125-0006)', () => {
+  const N = require('../agentes/nucleo.js');
+  const calc = N.calcularCotizacion({ zona: 'centro', dias_renta: 1 }, [{ sku: 'SIL-PLE', nombre: 'Silla', cantidad: 200, precio_dia: 12 }, { sku: 'CAR-612', nombre: 'Carpa', cantidad: 3, precio_dia: 1800 }, { sku: 'PIS-44', nombre: 'Pista', cantidad: 1, precio_dia: 2500 }]);
+  const texto = 'RESULTADO SIMULADO\nDescuento (5 % por subtotal mayor a $10,000.00 MXN): -$515.00 MXN\nTotal: $' + calc.total.toLocaleString('en-US', { minimumFractionDigits: 2 }) + ' MXN\nSupuestos: ninguno.';
+  const r = N.revisarDeterminista(texto, calc, { maquina: { requiere: ['RESULTADO SIMULADO', 'Supuestos:', 'Total:'], prohibidas: [] } });
+  assert.deepStrictEqual(r.fallas, []);
+  const r2 = N.revisarDeterminista(texto + ' Pago extra $999.00', calc, { maquina: { requiere: [], prohibidas: [] } });
+  assert.ok(r2.fallas.some((f) => f.includes('$999')));
+});
