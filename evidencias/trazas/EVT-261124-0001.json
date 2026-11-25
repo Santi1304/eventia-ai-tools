@@ -1,0 +1,102 @@
+{
+  "caso_id": "EVT-261124-0001",
+  "canal": "telegram",
+  "usuario": "tg_110d7b5b",
+  "estado": "error",
+  "skills": {
+    "cotizacion": "1.1",
+    "revision": "1.0"
+  },
+  "costo_usd": 0,
+  "propuestas": [],
+  "aprobacion": null,
+  "traza": [
+    {
+      "n": 1,
+      "fecha_hora": "2026-11-24T17:18:30.986Z",
+      "caso_id": "EVT-261124-0001",
+      "agente": "orquestador",
+      "evento": "caso_creado",
+      "datos": {
+        "canal": "telegram",
+        "modo": "SIMULADO",
+        "limite_costo_usd": 0.02
+      }
+    },
+    {
+      "n": 2,
+      "fecha_hora": "2026-11-24T17:18:31.345Z",
+      "caso_id": "EVT-261124-0001",
+      "agente": "orquestador",
+      "evento": "skills_cargados",
+      "datos": {
+        "cotizacion": "cotizacion-mobiliario-eventos@1.1 #d62e555a",
+        "revision": "revision-propuesta-eventos@1.0 #af20b97b",
+        "reglas_cotizacion": 7,
+        "criterios_revision": 4
+      }
+    },
+    {
+      "n": 3,
+      "fecha_hora": "2026-11-24T17:18:31.346Z",
+      "caso_id": "EVT-261124-0001",
+      "agente": "orquestador",
+      "evento": "vuelta_control",
+      "datos": {
+        "fase": "A1",
+        "llamadas": 0,
+        "costo_usd": 0,
+        "iteracion": 0
+      }
+    },
+    {
+      "n": 4,
+      "fecha_hora": "2026-11-24T17:18:31.346Z",
+      "caso_id": "EVT-261124-0001",
+      "agente": "orquestador",
+      "evento": "invoca",
+      "datos": {
+        "agente": "agente_1_intake",
+        "proyectado_usd": 0.000227,
+        "restante_usd": 0.02
+      }
+    },
+    {
+      "n": 5,
+      "fecha_hora": "2026-11-24T17:18:31.807Z",
+      "caso_id": "EVT-261124-0001",
+      "agente": "agente_1_intake",
+      "evento": "respuesta_modelo",
+      "datos": {
+        "llamada_id": "EVT-261124-0001-L01",
+        "estado": "http_400",
+        "tokens_entrada": "",
+        "tokens_salida": "",
+        "costo_usd": ""
+      }
+    },
+    {
+      "n": 6,
+      "fecha_hora": "2026-11-24T17:18:31.807Z",
+      "caso_id": "EVT-261124-0001",
+      "agente": "orquestador",
+      "evento": "cierre",
+      "datos": {
+        "estado": "error",
+        "motivo": "fallo_api:http_400:invalid_request_error"
+      }
+    },
+    {
+      "n": 7,
+      "fecha_hora": "2026-11-24T17:18:31.857Z",
+      "caso_id": "EVT-261124-0001",
+      "agente": "orquestador",
+      "evento": "registro_y_notificacion",
+      "datos": {
+        "estado": "error",
+        "costo_usd": 0,
+        "llamadas": 1
+      }
+    }
+  ]
+}

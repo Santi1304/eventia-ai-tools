@@ -1,13 +1,13 @@
 escenario,casos_mes,tarea_programada,llm_usd,minutos_voz,plan_voz,voz_plataforma_usd,voz_llm_usd,ejecuciones_n8n,plan_n8n,n8n_usd,total_usd,usd_por_caso
-base,100,cada_10_min,0.089355,60,Free,3.6,0.6,4620,Pro,54,58.289355,0.582894
-base,100,cada_hora,0.089355,60,Free,3.6,0.6,1020,Starter,21.6,25.889355,0.258894
-base,1000,cada_10_min,0.89355,600,Free,46.8,6,7320,Pro,54,107.69355,0.107694
-base,1000,cada_hora,0.89355,600,Free,46.8,6,3720,Pro,54,107.69355,0.107694
-base,10000,cada_10_min,8.9355,6000,Free,478.8,60,34320,Business/autohospedado (fuera de tabla),,,
-base,10000,cada_hora,8.9355,6000,Free,478.8,60,30720,Business/autohospedado (fuera de tabla),,,
-alto,100,cada_10_min,0.106375,200,Free,14.8,8.92,4820,Pro,54,77.826375,0.778264
-alto,100,cada_hora,0.106375,200,Free,14.8,8.92,1220,Starter,21.6,45.426375,0.454264
-alto,1000,cada_10_min,1.06375,2000,Free,158.8,89.2,9320,Pro,54,303.06375,0.303064
-alto,1000,cada_hora,1.06375,2000,Free,158.8,89.2,5720,Pro,54,303.06375,0.303064
-alto,10000,cada_10_min,10.6375,20000,Free,1598.8,892,54320,Business/autohospedado (fuera de tabla),,,
-alto,10000,cada_hora,10.6375,20000,Free,1598.8,892,50720,Business/autohospedado (fuera de tabla),,,
+base,100,cada_10_min,0.095107,60,Free,3.6,0.6,4620,Pro,54,58.295107,0.582951
+base,100,cada_hora,0.095107,60,Free,3.6,0.6,1020,Starter,21.6,25.895107,0.258951
+base,1000,cada_10_min,0.951067,600,Free,46.8,6,7320,Pro,54,107.751067,0.107751
+base,1000,cada_hora,0.951067,600,Free,46.8,6,3720,Pro,54,107.751067,0.107751
+base,10000,cada_10_min,9.510667,6000,Free,478.8,60,34320,Business/autohospedado (fuera de tabla),,,
+base,10000,cada_hora,9.510667,6000,Free,478.8,60,30720,Business/autohospedado (fuera de tabla),,,
+alto,100,cada_10_min,0.113222,200,Free,14.8,8.92,4820,Pro,54,77.833222,0.778332
+alto,100,cada_hora,0.113222,200,Free,14.8,8.92,1220,Starter,21.6,45.433222,0.454332
+alto,1000,cada_10_min,1.132222,2000,Free,158.8,89.2,9320,Pro,54,303.132222,0.303132
+alto,1000,cada_hora,1.132222,2000,Free,158.8,89.2,5720,Pro,54,303.132222,0.303132
+alto,10000,cada_10_min,11.322222,20000,Free,1598.8,892,54320,Business/autohospedado (fuera de tabla),,,
+alto,10000,cada_hora,11.322222,20000,Free,1598.8,892,50720,Business/autohospedado (fuera de tabla),,,

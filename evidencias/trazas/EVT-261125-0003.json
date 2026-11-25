@@ -1,0 +1,334 @@
+{
+  "caso_id": "EVT-261125-0003",
+  "canal": "telegram",
+  "usuario": "tg_110d7b5b",
+  "estado": "aprobado_simulado",
+  "skills": {
+    "cotizacion": "1.1",
+    "revision": "1.0"
+  },
+  "costo_usd": 0.000469,
+  "propuestas": [
+    {
+      "version": 1,
+      "texto": "RESULTADO SIMULADO\n\nPropuesta de mobiliario para evento\nTipo: cumpleaños | Fecha: 2026-12-19 | Invitados: 60 | Zona: Zona Sur | Días de renta: 1\n\nPartidas:\n- Silla plegable blanca x60: $720.00 MXN\n- Mesa redonda para 10 personas x6: $540.00 MXN\n- Mantel redondo x6: $270.00 MXN\n\nSubtotal: $1,530.00 MXN\nDescuento: $0.00 MXN\nFlete: $900.00 MXN\nIVA: $388.80 MXN\nTotal: $2,818.80 MXN\n\nDepósito en garantía: $306.00 MXN\nAnticipo para apartar: $1,409.40 MXN\n\nSupuestos:\n- 1 día de renta (no se indicó).\n- Paquete base (sillas plegables, mesas redondas y manteles) porque no se indicaron artículos.\n- Depósito en garantía requerido.\n- Anticipo para apartar requerido; el apartado depende de aprobación humana.\n- Vigencia sujeta a aprobación.",
+      "skill": "cotizacion-mobiliario-eventos@1.1",
+      "fecha_hora": "2026-11-25T17:25:59.920Z",
+      "revision_determinista": {
+        "ok": true,
+        "fallas": []
+      }
+    }
+  ],
+  "aprobacion": {
+    "version": 1,
+    "solicitada": "2026-11-25T17:26:00.553Z",
+    "expira": "2026-11-25T17:56:00.553Z",
+    "decision": "aprobado",
+    "por": "tg_110d7b5b",
+    "fecha_hora": "2026-11-25T17:42:59.762Z"
+  },
+  "traza": [
+    {
+      "n": 1,
+      "fecha_hora": "2026-11-25T17:25:56.479Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "orquestador",
+      "evento": "caso_creado",
+      "datos": {
+        "canal": "telegram",
+        "modo": "SIMULADO",
+        "limite_costo_usd": 0.02
+      }
+    },
+    {
+      "n": 2,
+      "fecha_hora": "2026-11-25T17:25:57.064Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "orquestador",
+      "evento": "skills_cargados",
+      "datos": {
+        "cotizacion": "cotizacion-mobiliario-eventos@1.1 #d62e555a",
+        "revision": "revision-propuesta-eventos@1.0 #af20b97b",
+        "reglas_cotizacion": 7,
+        "criterios_revision": 4
+      }
+    },
+    {
+      "n": 3,
+      "fecha_hora": "2026-11-25T17:25:57.064Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "orquestador",
+      "evento": "vuelta_control",
+      "datos": {
+        "fase": "A1",
+        "llamadas": 0,
+        "costo_usd": 0,
+        "iteracion": 0
+      }
+    },
+    {
+      "n": 4,
+      "fecha_hora": "2026-11-25T17:25:57.064Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "orquestador",
+      "evento": "invoca",
+      "datos": {
+        "agente": "agente_1_intake",
+        "proyectado_usd": 0.000276,
+        "restante_usd": 0.02
+      }
+    },
+    {
+      "n": 5,
+      "fecha_hora": "2026-11-25T17:25:58.182Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "agente_1_intake",
+      "evento": "respuesta_modelo",
+      "datos": {
+        "llamada_id": "EVT-261125-0003-L01",
+        "estado": "ok",
+        "tokens_entrada": 377,
+        "tokens_salida": 73,
+        "costo_usd": 0.000074
+      }
+    },
+    {
+      "n": 6,
+      "fecha_hora": "2026-11-25T17:25:58.182Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "agente_1_intake",
+      "evento": "requerimiento",
+      "datos": {
+        "ok": true,
+        "faltantes": [],
+        "politica": [],
+        "requerimiento": {
+          "fecha_evento": "2026-12-19",
+          "invitados": 60,
+          "zona": "sur",
+          "tipo_evento": "cumpleaños",
+          "dias_renta": 1,
+          "articulos": []
+        }
+      }
+    },
+    {
+      "n": 7,
+      "fecha_hora": "2026-11-25T17:25:58.234Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "orquestador",
+      "evento": "vuelta_control",
+      "datos": {
+        "fase": "A2",
+        "llamadas": 1,
+        "costo_usd": 0.000074,
+        "iteracion": 0
+      }
+    },
+    {
+      "n": 8,
+      "fecha_hora": "2026-11-25T17:25:58.235Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "agente_2_catalogo",
+      "evento": "disponibilidad",
+      "datos": {
+        "ok": true,
+        "verificadas": [
+          "SIL-PLE×60",
+          "MES-RED×6",
+          "MAN-RED×6"
+        ],
+        "insuficientes": [],
+        "no_mapeados": [],
+        "fuentes": [
+          "catalogo v2026-11-04",
+          "reservas privadas @ 2026-12-19"
+        ]
+      }
+    },
+    {
+      "n": 9,
+      "fecha_hora": "2026-11-25T17:25:58.235Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "orquestador",
+      "evento": "vuelta_control",
+      "datos": {
+        "fase": "A3",
+        "llamadas": 1,
+        "costo_usd": 0.000074,
+        "iteracion": 0
+      }
+    },
+    {
+      "n": 10,
+      "fecha_hora": "2026-11-25T17:25:58.235Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "agente_3_propuesta",
+      "evento": "calculo",
+      "datos": {
+        "total": 2818.8,
+        "subtotal": 1530,
+        "formula": "total = (Σ cantidad×precio_dia×días − descuento + flete) × (1+IVA)"
+      }
+    },
+    {
+      "n": 11,
+      "fecha_hora": "2026-11-25T17:25:58.235Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "orquestador",
+      "evento": "loop_calidad",
+      "datos": {
+        "iteracion": 1,
+        "max": 3
+      }
+    },
+    {
+      "n": 12,
+      "fecha_hora": "2026-11-25T17:25:58.242Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "orquestador",
+      "evento": "invoca",
+      "datos": {
+        "agente": "agente_3_propuesta",
+        "proyectado_usd": 0.00056,
+        "restante_usd": 0.019926
+      }
+    },
+    {
+      "n": 13,
+      "fecha_hora": "2026-11-25T17:25:59.920Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "agente_3_propuesta",
+      "evento": "respuesta_modelo",
+      "datos": {
+        "llamada_id": "EVT-261125-0003-L02",
+        "estado": "ok",
+        "tokens_entrada": 892,
+        "tokens_salida": 389,
+        "costo_usd": 0.000284
+      }
+    },
+    {
+      "n": 14,
+      "fecha_hora": "2026-11-25T17:25:59.920Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "agente_3_propuesta",
+      "evento": "propuesta",
+      "datos": {
+        "version": 1,
+        "caracteres": 735
+      }
+    },
+    {
+      "n": 15,
+      "fecha_hora": "2026-11-25T17:25:59.949Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "orquestador",
+      "evento": "vuelta_control",
+      "datos": {
+        "fase": "A4",
+        "llamadas": 2,
+        "costo_usd": 0.000358,
+        "iteracion": 1
+      }
+    },
+    {
+      "n": 16,
+      "fecha_hora": "2026-11-25T17:25:59.950Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "agente_4_revisor",
+      "evento": "revision_determinista",
+      "datos": {
+        "version": 1,
+        "ok": true,
+        "fallas": []
+      }
+    },
+    {
+      "n": 17,
+      "fecha_hora": "2026-11-25T17:25:59.950Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "orquestador",
+      "evento": "invoca",
+      "datos": {
+        "agente": "agente_4_revisor",
+        "proyectado_usd": 0.000365,
+        "restante_usd": 0.019642
+      }
+    },
+    {
+      "n": 18,
+      "fecha_hora": "2026-11-25T17:26:00.553Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "agente_4_revisor",
+      "evento": "respuesta_modelo",
+      "datos": {
+        "llamada_id": "EVT-261125-0003-L03",
+        "estado": "ok",
+        "tokens_entrada": 993,
+        "tokens_salida": 23,
+        "costo_usd": 0.000111
+      }
+    },
+    {
+      "n": 19,
+      "fecha_hora": "2026-11-25T17:26:00.553Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "agente_4_revisor",
+      "evento": "veredicto",
+      "datos": {
+        "version": 1,
+        "veredicto": "aprobado",
+        "correcciones": []
+      }
+    },
+    {
+      "n": 20,
+      "fecha_hora": "2026-11-25T17:26:00.553Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "orquestador",
+      "evento": "solicita_aprobacion_humana",
+      "datos": {
+        "version": 1,
+        "expira": "2026-11-25T17:56:00.553Z"
+      }
+    },
+    {
+      "n": 21,
+      "fecha_hora": "2026-11-25T17:26:00.613Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "orquestador",
+      "evento": "registro_y_notificacion",
+      "datos": {
+        "estado": "pendiente_aprobacion",
+        "costo_usd": 0.000469,
+        "llamadas": 3
+      }
+    },
+    {
+      "n": 22,
+      "fecha_hora": "2026-11-25T17:42:59.762Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "orquestador",
+      "evento": "cierre",
+      "datos": {
+        "estado": "aprobado_simulado",
+        "motivo": "apartado simulado de inventario para 2026-12-19"
+      }
+    },
+    {
+      "n": 23,
+      "fecha_hora": "2026-11-25T17:42:59.762Z",
+      "caso_id": "EVT-261125-0003",
+      "agente": "aprobador_humano",
+      "evento": "decision_telegram",
+      "datos": {
+        "decision": "ap",
+        "version": "1",
+        "resultado": "ok",
+        "via": "boton"
+      }
+    }
+  ]
+}

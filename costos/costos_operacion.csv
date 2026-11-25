@@ -1,2 +1,64 @@
 fecha_hora,caso_id,llamada_id,etapa,agente,proveedor,modelo,tokens_entrada,tokens_salida,cache_lectura,cache_escritura,duracion_voz_s,unidad_cobro,tarifa_entrada_usd_mtok,tarifa_salida_usd_mtok,costo_usd,moneda,estado,reintento,origen,duracion_ms,iteracion,skill_version,modo,detalle
-
+2026-11-24T17:18:31.807Z,EVT-261124-0001,EVT-261124-0001-L01,agentes,agente_1_intake,anthropic,claude-haiku-5-5,,,,,,token,0.1,0.5,,USD,http_400,0,desconocido,461,0,,SIMULADO,
+2026-11-25T17:18:26.100Z,EVT-261125-0001,EVT-261125-0001-L01,agentes,agente_1_intake,anthropic,claude-haiku-5-5,394,119,0,0,,token,0.1,0.5,0.000099,USD,ok,0,medido,1051,0,,SIMULADO,
+2026-11-25T17:18:27.236Z,EVT-261125-0001,EVT-261125-0001-L02,agentes,agente_2_catalogo,anthropic,claude-haiku-5-5,608,96,0,0,,token,0.1,0.5,0.000109,USD,ok,0,medido,1111,0,,SIMULADO,
+2026-11-25T17:18:27.260Z,EVT-261125-0001,EVT-261125-0001-D11,agentes,agente_3_propuesta,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,cálculo determinista de cotización
+2026-11-25T17:18:29.352Z,EVT-261125-0001,EVT-261125-0001-L03,agentes,agente_3_propuesta,anthropic,claude-haiku-5-5,814,287,0,0,,token,0.1,0.5,0.000225,USD,ok,0,medido,2087,1,1.1,SIMULADO,
+2026-11-25T17:18:29.383Z,EVT-261125-0001,EVT-261125-0001-D17,revision_guardrails,agente_4_revisor,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,revisión determinista v1: pasa
+2026-11-25T17:18:31.274Z,EVT-261125-0001,EVT-261125-0001-L04,agentes,agente_4_revisor,anthropic,claude-haiku-5-5,862,300,0,0,,token,0.1,0.5,0.000236,USD,max_tokens,0,medido,1891,1,1.0,SIMULADO,
+2026-11-25T17:18:31.298Z,EVT-261125-0001,EVT-261125-0001-D22,revision_guardrails,agente_4_revisor,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,revisión determinista v1: pasa
+2026-11-25T17:18:33.154Z,EVT-261125-0001,EVT-261125-0001-L05,agentes,agente_4_revisor,anthropic,claude-haiku-5-5,862,300,0,0,,token,0.1,0.5,0.000236,USD,max_tokens,1,medido,1856,1,1.0,SIMULADO,
+2026-11-25T17:23:17.062Z,EVT-261125-0002,EVT-261125-0002-L01,agentes,agente_1_intake,anthropic,claude-haiku-5-5,394,119,0,0,,token,0.1,0.5,0.000099,USD,ok,0,medido,960,0,,SIMULADO,
+2026-11-25T17:23:17.996Z,EVT-261125-0002,EVT-261125-0002-L02,agentes,agente_2_catalogo,anthropic,claude-haiku-5-5,608,96,0,0,,token,0.1,0.5,0.000109,USD,ok,0,medido,907,0,,SIMULADO,
+2026-11-25T17:23:18.024Z,EVT-261125-0002,EVT-261125-0002-D11,agentes,agente_3_propuesta,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,cálculo determinista de cotización
+2026-11-25T17:23:22.524Z,EVT-261125-0002,EVT-261125-0002-L03,agentes,agente_3_propuesta,anthropic,claude-haiku-5-5,814,312,0,0,,token,0.1,0.5,0.000237,USD,ok,0,medido,4495,1,1.1,SIMULADO,
+2026-11-25T17:23:22.554Z,EVT-261125-0002,EVT-261125-0002-D17,revision_guardrails,agente_4_revisor,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,revisión determinista v1: pasa
+2026-11-25T17:23:23.917Z,EVT-261125-0002,EVT-261125-0002-L04,agentes,agente_4_revisor,anthropic,claude-haiku-5-5,955,189,0,0,,token,0.1,0.5,0.00019,USD,ok,0,medido,1363,1,1.0,SIMULADO,
+2026-11-25T17:23:25.980Z,EVT-261125-0002,EVT-261125-0002-L05,agentes,agente_3_propuesta,anthropic,claude-haiku-5-5,1364,450,0,0,,token,0.1,0.5,0.000361,USD,ok,0,medido,2033,2,1.1,SIMULADO,
+2026-11-25T17:23:26.005Z,EVT-261125-0002,EVT-261125-0002-D27,revision_guardrails,agente_4_revisor,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,revisión determinista v2: 1 fallas
+2026-11-25T17:23:27.946Z,EVT-261125-0002,EVT-261125-0002-L06,agentes,agente_3_propuesta,anthropic,claude-haiku-5-5,1362,463,0,0,,token,0.1,0.5,0.000368,USD,ok,0,medido,1940,3,1.1,SIMULADO,
+2026-11-25T17:23:27.976Z,EVT-261125-0002,EVT-261125-0002-D34,revision_guardrails,agente_4_revisor,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,revisión determinista v3: pasa
+2026-11-25T17:23:28.545Z,EVT-261125-0002,EVT-261125-0002-L07,agentes,agente_4_revisor,anthropic,claude-haiku-5-5,1107,23,0,0,,token,0.1,0.5,0.000122,USD,ok,0,medido,568,3,1.0,SIMULADO,
+2026-11-25T17:25:58.182Z,EVT-261125-0003,EVT-261125-0003-L01,agentes,agente_1_intake,anthropic,claude-haiku-5-5,377,73,0,0,,token,0.1,0.5,0.000074,USD,ok,0,medido,1118,0,,SIMULADO,
+2026-11-25T17:25:58.234Z,EVT-261125-0003,EVT-261125-0003-D07,agentes,agente_2_catalogo,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,paquete base por regla (sin artículos indicados)
+2026-11-25T17:25:58.235Z,EVT-261125-0003,EVT-261125-0003-D09,agentes,agente_3_propuesta,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,cálculo determinista de cotización
+2026-11-25T17:25:59.920Z,EVT-261125-0003,EVT-261125-0003-L02,agentes,agente_3_propuesta,anthropic,claude-haiku-5-5,892,389,0,0,,token,0.1,0.5,0.000284,USD,ok,0,medido,1678,1,1.1,SIMULADO,
+2026-11-25T17:25:59.950Z,EVT-261125-0003,EVT-261125-0003-D15,revision_guardrails,agente_4_revisor,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,revisión determinista v1: pasa
+2026-11-25T17:26:00.552Z,EVT-261125-0003,EVT-261125-0003-L03,agentes,agente_4_revisor,anthropic,claude-haiku-5-5,993,23,0,0,,token,0.1,0.5,0.000111,USD,ok,0,medido,602,1,1.0,SIMULADO,
+2026-11-25T17:26:40.659Z,EVT-261125-0004,EVT-261125-0004-L01,agentes,agente_1_intake,anthropic,claude-haiku-5-5,398,140,0,0,,token,0.1,0.5,0.00011,USD,ok,0,medido,1102,0,,SIMULADO,
+2026-11-25T17:26:41.553Z,EVT-261125-0004,EVT-261125-0004-L02,agentes,agente_2_catalogo,anthropic,claude-haiku-5-5,624,126,0,0,,token,0.1,0.5,0.000125,USD,ok,0,medido,860,0,,SIMULADO,
+2026-11-25T17:26:41.587Z,EVT-261125-0004,EVT-261125-0004-D11,agentes,agente_3_propuesta,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,cálculo determinista de cotización
+2026-11-25T17:26:43.300Z,EVT-261125-0004,EVT-261125-0004-L03,agentes,agente_3_propuesta,anthropic,claude-haiku-5-5,875,375,0,0,,token,0.1,0.5,0.000275,USD,ok,0,medido,1708,1,1.1,SIMULADO,
+2026-11-25T17:26:43.331Z,EVT-261125-0004,EVT-261125-0004-D17,revision_guardrails,agente_4_revisor,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,revisión determinista v1: pasa
+2026-11-25T17:26:44.618Z,EVT-261125-0004,EVT-261125-0004-L04,agentes,agente_4_revisor,anthropic,claude-haiku-5-5,1039,171,0,0,,token,0.1,0.5,0.000189,USD,ok,0,medido,1287,1,1.0,SIMULADO,
+2026-11-25T17:26:46.945Z,EVT-261125-0004,EVT-261125-0004-L05,agentes,agente_3_propuesta,anthropic,claude-haiku-5-5,1473,561,0,0,,token,0.1,0.5,0.000428,USD,ok,0,medido,2297,2,1.1,SIMULADO,
+2026-11-25T17:26:46.987Z,EVT-261125-0004,EVT-261125-0004-D27,revision_guardrails,agente_4_revisor,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,revisión determinista v2: 1 fallas
+2026-11-25T17:26:49.027Z,EVT-261125-0004,EVT-261125-0004-L06,agentes,agente_3_propuesta,anthropic,claude-haiku-5-5,1539,548,0,0,,token,0.1,0.5,0.000428,USD,ok,0,medido,2040,3,1.1,SIMULADO,
+2026-11-25T17:26:49.062Z,EVT-261125-0004,EVT-261125-0004-D34,revision_guardrails,agente_4_revisor,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,revisión determinista v3: pasa
+2026-11-25T17:26:50.598Z,EVT-261125-0004,EVT-261125-0004-L07,agentes,agente_4_revisor,anthropic,claude-haiku-5-5,1214,207,0,0,,token,0.1,0.5,0.000225,USD,ok,0,medido,1535,3,1.0,SIMULADO,
+2026-11-25T17:32:38.559Z,EVT-261125-0005,EVT-261125-0005-L01,agentes,agente_1_intake,anthropic,claude-haiku-5-5,398,139,0,0,,token,0.1,0.5,0.000109,USD,ok,0,medido,1200,0,,SIMULADO,
+2026-11-25T17:32:39.442Z,EVT-261125-0005,EVT-261125-0005-L02,agentes,agente_2_catalogo,anthropic,claude-haiku-5-5,624,126,0,0,,token,0.1,0.5,0.000125,USD,ok,0,medido,844,0,,SIMULADO,
+2026-11-25T17:32:39.481Z,EVT-261125-0005,EVT-261125-0005-D11,agentes,agente_3_propuesta,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,cálculo determinista de cotización
+2026-11-25T17:32:41.725Z,EVT-261125-0005,EVT-261125-0005-L03,agentes,agente_3_propuesta,anthropic,claude-haiku-5-5,984,454,0,0,,token,0.1,0.5,0.000325,USD,ok,0,medido,2238,1,1.1,SIMULADO,
+2026-11-25T17:32:41.763Z,EVT-261125-0005,EVT-261125-0005-D17,revision_guardrails,agente_4_revisor,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,revisión determinista v1: 1 fallas
+2026-11-25T17:32:43.495Z,EVT-261125-0005,EVT-261125-0005-L04,agentes,agente_3_propuesta,anthropic,claude-haiku-5-5,1528,454,0,0,,token,0.1,0.5,0.00038,USD,ok,0,medido,1731,2,1.1,SIMULADO,
+2026-11-25T17:32:43.533Z,EVT-261125-0005,EVT-261125-0005-D24,revision_guardrails,agente_4_revisor,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,revisión determinista v2: 1 fallas
+2026-11-25T17:32:45.326Z,EVT-261125-0005,EVT-261125-0005-L05,agentes,agente_3_propuesta,anthropic,claude-haiku-5-5,1528,454,0,0,,token,0.1,0.5,0.00038,USD,ok,0,medido,1792,3,1.1,SIMULADO,
+2026-11-25T17:32:45.360Z,EVT-261125-0005,EVT-261125-0005-D31,revision_guardrails,agente_4_revisor,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,revisión determinista v3: 1 fallas
+2026-11-25T17:33:13.701Z,EVT-261125-0006,EVT-261125-0006-L01,agentes,agente_1_intake,anthropic,claude-haiku-5-5,398,139,0,0,,token,0.1,0.5,0.000109,USD,ok,0,medido,1252,0,,SIMULADO,
+2026-11-25T17:33:14.625Z,EVT-261125-0006,EVT-261125-0006-L02,agentes,agente_2_catalogo,anthropic,claude-haiku-5-5,624,126,0,0,,token,0.1,0.5,0.000125,USD,ok,0,medido,875,0,,SIMULADO,
+2026-11-25T17:33:14.678Z,EVT-261125-0006,EVT-261125-0006-D11,agentes,agente_3_propuesta,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,cálculo determinista de cotización
+2026-11-25T17:33:16.929Z,EVT-261125-0006,EVT-261125-0006-L03,agentes,agente_3_propuesta,anthropic,claude-haiku-5-5,984,456,0,0,,token,0.1,0.5,0.000326,USD,ok,0,medido,2245,1,1.1,SIMULADO,
+2026-11-25T17:33:16.974Z,EVT-261125-0006,EVT-261125-0006-D17,revision_guardrails,agente_4_revisor,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,revisión determinista v1: 1 fallas
+2026-11-25T17:33:18.735Z,EVT-261125-0006,EVT-261125-0006-L04,agentes,agente_3_propuesta,anthropic,claude-haiku-5-5,1530,456,0,0,,token,0.1,0.5,0.000381,USD,ok,0,medido,1761,2,1.1,SIMULADO,
+2026-11-25T17:33:18.770Z,EVT-261125-0006,EVT-261125-0006-D24,revision_guardrails,agente_4_revisor,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,revisión determinista v2: 1 fallas
+2026-11-25T17:33:20.525Z,EVT-261125-0006,EVT-261125-0006-L05,agentes,agente_3_propuesta,anthropic,claude-haiku-5-5,1530,456,0,0,,token,0.1,0.5,0.000381,USD,ok,0,medido,1754,3,1.1,SIMULADO,
+2026-11-25T17:33:20.560Z,EVT-261125-0006,EVT-261125-0006-D31,revision_guardrails,agente_4_revisor,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,revisión determinista v3: 1 fallas
+2026-11-25T17:36:09.762Z,EVT-261125-0007,EVT-261125-0007-L01,agentes,agente_1_intake,anthropic,claude-haiku-5-5,398,140,0,0,,token,0.1,0.5,0.00011,USD,ok,0,medido,1256,0,,SIMULADO,
+2026-11-25T17:36:10.697Z,EVT-261125-0007,EVT-261125-0007-L02,agentes,agente_2_catalogo,anthropic,claude-haiku-5-5,624,126,0,0,,token,0.1,0.5,0.000125,USD,ok,0,medido,897,0,,SIMULADO,
+2026-11-25T17:36:10.744Z,EVT-261125-0007,EVT-261125-0007-D11,agentes,agente_3_propuesta,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,cálculo determinista de cotización
+2026-11-25T17:36:12.543Z,EVT-261125-0007,EVT-261125-0007-L03,agentes,agente_3_propuesta,anthropic,claude-haiku-5-5,952,427,0,0,,token,0.1,0.5,0.000309,USD,ok,0,medido,1794,1,1.1,SIMULADO,
+2026-11-25T17:36:12.585Z,EVT-261125-0007,EVT-261125-0007-D17,revision_guardrails,agente_4_revisor,regla_determinista,n/a,,,,,,no_aplica,,,0,USD,ok,0,no_aplica,0,,,SIMULADO,revisión determinista v1: pasa
+2026-11-25T17:36:13.201Z,EVT-261125-0007,EVT-261125-0007-L04,agentes,agente_4_revisor,anthropic,claude-haiku-5-5,1207,23,0,0,,token,0.1,0.5,0.000132,USD,ok,0,medido,616,1,1.1,SIMULADO,
+2026-11-25T17:37:20.845Z,EVT-261125-0008,EVT-261125-0008-L01,agentes,agente_1_intake,anthropic,claude-haiku-5-5,369,173,0,0,,token,0.1,0.5,0.000123,USD,ok,0,medido,1150,0,,SIMULADO,
+2026-11-25T17:41:43.493Z,EVT-261125-0011,EVT-261125-0011-L01,agentes,agente_1_intake,anthropic,claude-haiku-5-5,373,69,0,0,,token,0.1,0.5,0.000072,USD,ok,0,medido,1326,0,,SIMULADO,

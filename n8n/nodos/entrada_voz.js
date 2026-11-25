@@ -24,7 +24,8 @@ if (b.accion === 'consultar') {
 }
 
 // crear — idempotente por evento_id (o por huella del contenido en la misma conversación)
-const evento = texto(b.evento_id, 80) || NUCLEO.hash(JSON.stringify(b) + '|' + String(b.conversacion_id || ''));
+// Idempotencia por conversación + intento: dos conversaciones distintas con "solicitud-1" no chocan.
+const evento = String(b.conversacion_id || 'sin_conv').slice(0, 80) + '|' + (texto(b.evento_id, 40) || NUCLEO.hash(JSON.stringify(b)));
 if (st.voz[evento]) return responder(200, { ok: true, folio: st.voz[evento], duplicado: true, mensaje: 'Esa solicitud ya estaba registrada con el folio ' + st.voz[evento] + '.' });
 
 const datos = {

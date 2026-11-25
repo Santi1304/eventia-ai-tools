@@ -1,0 +1,48 @@
+{
+  "caso_id": "EVT-261125-0009",
+  "canal": "telegram",
+  "usuario": "tg_110d7b5b",
+  "estado": "bloqueado",
+  "skills": {
+    "cotizacion": "1.1",
+    "revision": "1.1"
+  },
+  "costo_usd": 0,
+  "propuestas": [],
+  "aprobacion": null,
+  "traza": [
+    {
+      "n": 1,
+      "fecha_hora": "2026-11-25T17:37:55.585Z",
+      "caso_id": "EVT-261125-0009",
+      "agente": "orquestador",
+      "evento": "caso_creado",
+      "datos": {
+        "canal": "telegram",
+        "modo": "SIMULADO",
+        "limite_costo_usd": 0.02
+      }
+    },
+    {
+      "n": 2,
+      "fecha_hora": "2026-11-25T17:37:55.585Z",
+      "caso_id": "EVT-261125-0009",
+      "agente": "guardrail_entrada",
+      "evento": "inyeccion_bloqueada",
+      "datos": {
+        "patron": "ignora(r)?\\s+(todas?\\s+)?(las\\s+)?(instrucciones|reglas|pol["
+      }
+    },
+    {
+      "n": 3,
+      "fecha_hora": "2026-11-25T17:37:55.585Z",
+      "caso_id": "EVT-261125-0009",
+      "agente": "orquestador",
+      "evento": "cierre",
+      "datos": {
+        "estado": "bloqueado",
+        "motivo": "instrucción no permitida detectada en la entrada"
+      }
+    }
+  ]
+}

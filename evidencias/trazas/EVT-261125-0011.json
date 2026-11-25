@@ -1,0 +1,124 @@
+{
+  "caso_id": "EVT-261125-0011",
+  "canal": "telegram",
+  "usuario": "tg_110d7b5b",
+  "estado": "fuera_politica",
+  "skills": {
+    "cotizacion": "1.1",
+    "revision": "1.1"
+  },
+  "costo_usd": 0.000072,
+  "propuestas": [],
+  "aprobacion": null,
+  "traza": [
+    {
+      "n": 1,
+      "fecha_hora": "2026-11-25T17:41:41.592Z",
+      "caso_id": "EVT-261125-0011",
+      "agente": "orquestador",
+      "evento": "caso_creado",
+      "datos": {
+        "canal": "telegram",
+        "modo": "SIMULADO",
+        "limite_costo_usd": 0.02
+      }
+    },
+    {
+      "n": 2,
+      "fecha_hora": "2026-11-25T17:41:42.166Z",
+      "caso_id": "EVT-261125-0011",
+      "agente": "orquestador",
+      "evento": "skills_cargados",
+      "datos": {
+        "cotizacion": "cotizacion-mobiliario-eventos@1.1 #d62e555a",
+        "revision": "revision-propuesta-eventos@1.1 #cccb7b5c",
+        "reglas_cotizacion": 7,
+        "criterios_revision": 5
+      }
+    },
+    {
+      "n": 3,
+      "fecha_hora": "2026-11-25T17:41:42.166Z",
+      "caso_id": "EVT-261125-0011",
+      "agente": "orquestador",
+      "evento": "vuelta_control",
+      "datos": {
+        "fase": "A1",
+        "llamadas": 0,
+        "costo_usd": 0,
+        "iteracion": 0
+      }
+    },
+    {
+      "n": 4,
+      "fecha_hora": "2026-11-25T17:41:42.167Z",
+      "caso_id": "EVT-261125-0011",
+      "agente": "orquestador",
+      "evento": "invoca",
+      "datos": {
+        "agente": "agente_1_intake",
+        "proyectado_usd": 0.000275,
+        "restante_usd": 0.02
+      }
+    },
+    {
+      "n": 5,
+      "fecha_hora": "2026-11-25T17:41:43.493Z",
+      "caso_id": "EVT-261125-0011",
+      "agente": "agente_1_intake",
+      "evento": "respuesta_modelo",
+      "datos": {
+        "llamada_id": "EVT-261125-0011-L01",
+        "estado": "ok",
+        "tokens_entrada": 373,
+        "tokens_salida": 69,
+        "costo_usd": 0.000072
+      }
+    },
+    {
+      "n": 6,
+      "fecha_hora": "2026-11-25T17:41:43.494Z",
+      "caso_id": "EVT-261125-0011",
+      "agente": "agente_1_intake",
+      "evento": "requerimiento",
+      "datos": {
+        "ok": false,
+        "faltantes": [],
+        "politica": [
+          "anticipación de 1 días (mínimo 3)"
+        ],
+        "requerimiento": {
+          "fecha_evento": "2026-11-26",
+          "invitados": 100,
+          "zona": "norte",
+          "tipo_evento": "boda",
+          "dias_renta": 1,
+          "articulos": []
+        }
+      }
+    },
+    {
+      "n": 7,
+      "fecha_hora": "2026-11-25T17:41:43.494Z",
+      "caso_id": "EVT-261125-0011",
+      "agente": "orquestador",
+      "evento": "cierre",
+      "datos": {
+        "estado": "fuera_politica",
+        "motivo": "anticipación de 1 días (mínimo 3)"
+      }
+    },
+    {
+      "n": 8,
+      "fecha_hora": "2026-11-25T17:41:43.598Z",
+      "caso_id": "EVT-261125-0011",
+      "agente": "orquestador",
+      "evento": "registro_y_notificacion",
+      "datos": {
+        "estado": "fuera_politica",
+        "costo_usd": 0.000072,
+        "llamadas": 1
+      }
+    }
+  ]
+}
