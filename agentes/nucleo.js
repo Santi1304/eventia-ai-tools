@@ -319,7 +319,7 @@ const NUCLEO = (function () {
         'Zonas válidas: ' + ZONAS().join(', ') + '. Responde SOLO con un objeto JSON, sin texto adicional, con las claves: ' +
         'fecha_evento, invitados, tipo_evento, zona, dias_renta, articulos (lista de {descripcion, cantidad}), notas.',
       user: '<datos_usuario>\n' + caso.entrada.texto + '\n</datos_usuario>',
-      max_tokens: 400
+      max_tokens: 500
     };
   }
   function promptA2(caso) {
@@ -329,7 +329,7 @@ const NUCLEO = (function () {
         'Conserva la cantidad indicada; usa null si no se indicó. Responde SOLO JSON: ' +
         '{"lineas":[{"sku":"...","cantidad":n|null,"descripcion_original":"..."}],"no_mapeados":["..."]}.\nCatálogo (sku | nombre | categoría):\n' + CATALOGO_COMPACTO(),
       user: '<datos_usuario>\n' + JSON.stringify(caso.requerimiento.articulos) + '\n</datos_usuario>',
-      max_tokens: 400
+      max_tokens: 500
     };
   }
   function promptA3(caso, skills) {
@@ -347,7 +347,7 @@ const NUCLEO = (function () {
         subtotal: mxn(c.subtotal), descuento: mxn(c.descuento), flete: mxn(c.flete), iva: mxn(c.iva), total: mxn(c.total),
         deposito_garantia: mxn(c.deposito_garantia), anticipo_para_apartar: mxn(c.anticipo_para_apartar) },
         supuestos: caso.advertencias, version_anterior: previa ? previa.texto : null }),
-      max_tokens: 700
+      max_tokens: 1000
     };
   }
   function promptA4(caso, skills) {
@@ -356,9 +356,10 @@ const NUCLEO = (function () {
       system: 'Eres el Agente 4 (Revisor de calidad y políticas) de Eventia. Decides si la propuesta puede liberarse a aprobación humana. ' +
         BASE_SEGURIDAD + '\nSkill ' + skills.revision.nombre + ' v' + skills.revision.version + ' — criterios:\n- ' + skills.revision.criterios.join('\n- ') +
         '\nLos montos ya fueron verificados por reglas; evalúa coherencia con el evento, claridad, supuestos explícitos y ausencia de promesas. ' +
-        'Responde SOLO JSON: {"veredicto":"aprobado"|"devuelto","correcciones":["acción concreta", ...]}.',
+        'No escribas tu análisis. Tu respuesta COMPLETA debe ser solo un objeto JSON que empiece con { y termine con }: ' +
+        '{"veredicto":"aprobado"|"devuelto","correcciones":["acción concreta", ...]} (correcciones vacía si apruebas; máximo 3, cada una de una línea).',
       user: '<datos_usuario>\n' + JSON.stringify({ evento: caso.requerimiento, total: mxn(caso.cotizacion.total), propuesta: p.texto }) + '\n</datos_usuario>',
-      max_tokens: 300
+      max_tokens: 600
     };
   }
 

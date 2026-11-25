@@ -64,6 +64,10 @@ code('Cerrar caso', 'cerrar_caso.js', [1340, 540]);
 // ── Mensajería ──
 sw('Tipo de mensaje', 2, [1580, 640]);
 nodos[nodos.length - 1].parameters.output = '={{ $json.tipo }}';
+// Acuse inmediato: nodo propio arriba del flujo para que n8n (orden v1 por posición) lo envíe antes de procesar el caso.
+nodo('Enviar acuse', 'n8n-nodes-base.telegram', 1.2, [680, 160],
+  { chatId: '={{ $json.chat_id }}', text: "={{ String($json.texto).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') }}", additionalFields: { appendAttribution: false, parse_mode: 'HTML' } },
+  { credentials: cred('telegramApi', 'Eventia Bot (Telegram)') });
 nodo('Enviar Telegram', 'n8n-nodes-base.telegram', 1.2, [1800, 580],
   { chatId: '={{ $json.chat_id }}', text: "={{ String($json.texto).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') }}", additionalFields: { appendAttribution: false, parse_mode: 'HTML' } },
   { credentials: cred('telegramApi', 'Eventia Bot (Telegram)') });
@@ -96,7 +100,7 @@ const C = (pairs) => ({ main: pairs.map((salida) => (salida || []).map((n) => ({
 const connections = {
   'Telegram Trigger': C([['Entrada Telegram']]),
   'Entrada Telegram': C([['Ruta']]),
-  'Ruta': C([[], ['Tipo de mensaje'], ['Cargar skills']]),
+  'Ruta': C([[], ['Enviar acuse'], ['Cargar skills']]),
   'Cargar skills': C([['Orquestador']]),
   'Orquestador': C([['Siguiente']]),
   'Siguiente': C([[], ['Claude API'], ['Cerrar caso']]),
